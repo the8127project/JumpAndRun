@@ -35,7 +35,7 @@ class sprite:
         self.img = img
         self.rect = rect
 
-   def move(self,  delta_x, delta_y):
+    def move(self, delta_x, delta_y):
         self.x = self.x + delta_x
         self.y = self.y + delta_y
         if (self.x > self.xmax):  self.x = self.xmax
@@ -70,9 +70,6 @@ x1 = 0
 run=True
 Minotaur = sprite('Minotaur_01/PNG Sequences/Attacking/', 200, 200, 0, 800, 0, 800, 1)
 
-
-
-
 while run:
     #pos_x = pos_x + (randint(-5, 5))
     #pos_y = pos_y + (randint(-5, 5))
@@ -84,7 +81,10 @@ while run:
     #(img2, rect2, x1) = next_sprite(x1, pos_x, pos_y)
     Minotaur.iteratesprite()
     Minotaur.move(randint(-5, 5), randint(-5, 5))
+    BG = (144,201,120)
+    screen.fill(BG)
     screen.blit(Minotaur.img, Minotaur.rect)
+
     for event in pygame.event.get():
        if event.type == pygame.QUIT:
            run= False
